@@ -103,7 +103,7 @@ zip([
           ), 0, 0
         ), 2, 0
       )
-    ),
+    )
 ]).forEach((pair, i) =>
   pair[0] === pair[1]() ?
     console.log('\x1b[32m%s\x1b[0m', `Test ${i + 1} passed`)
