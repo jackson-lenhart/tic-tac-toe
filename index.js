@@ -7,23 +7,16 @@ let gameResult = require('./modules/game-result')
 
 let { prompt, rlClose } = require('./utils/rl')
 let replicate = require('./utils/replicate')
-let delay = require('./utils/delay')
 
 async function start() {
-  console.log(
-    '' + replicate('-', 22).join('') +
-    'WELCOME-TO-TIC-TAC-TOE' +
-    replicate('-', 22).join('')
-  )
-
   try {
-    await delay(0.5)
-
     let board = buildBoard()
     let result = null
     while (!result) {
-      console.log(replicate('-', 66).join(''))
-      console.log(renderBoard(board))
+      console.log(
+        replicate('-', 66).join('') +
+        '\n' + renderBoard(board)
+      )
       let nextMove =
         await prompt(
           'Where would you like to move?\n' +
@@ -38,10 +31,10 @@ async function start() {
       result = gameResult(board)
     }
 
-    console.log(replicate('-', 66).join(''))
-    console.log(renderBoard(board))
     console.log(
-      'THE END.\n' +
+      replicate('-', 66).join('') +
+      '\n' + renderBoard(board) +
+      '\n' + 'THE END.\n' +
       (result === true ?
         'Tie game!'
         : 'Won by ' + result)
