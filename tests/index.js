@@ -4,7 +4,7 @@ let zip = require('../utils/zip')
 
 let move = require('../modules/move')
 let buildBoard = require('../modules/build-board')
-let gameOver = require('../modules/game-over')
+let gameResult = require('../modules/game-result')
 
 zip([
   false,
@@ -15,9 +15,9 @@ zip([
   'X',
   'O'
 ], [
-  () => gameOver(buildBoard()),
+  () => gameResult(buildBoard()),
   () =>
-    gameOver(
+    gameResult(
       move(
         move(
           move(
@@ -31,7 +31,7 @@ zip([
       )
     ),
   () =>
-    gameOver(
+    gameResult(
       move(
         move(
           move(
@@ -45,7 +45,7 @@ zip([
       )
     ),
   () =>
-    gameOver(
+    gameResult(
       move(
         move(
           move(
@@ -59,7 +59,7 @@ zip([
       )
     ),
   () =>
-    gameOver(
+    gameResult(
       move(
         move(
           move(
@@ -75,7 +75,7 @@ zip([
       )
     ),
   () =>
-    gameOver(
+    gameResult(
       move(
         move(
           move(
@@ -89,7 +89,7 @@ zip([
       )
     ),
   () =>
-    gameOver(
+    gameResult(
       move(
         move(
           move(

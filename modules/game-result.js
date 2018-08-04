@@ -37,7 +37,7 @@ let findDiagonal = board =>
 let winner = board =>
   findRow(board) || findColumn(board) || findDiagonal(board)
 
-let gameOver = board =>
+let gameResult = board =>
   winner(board) || boardFull(board)
 
-module.exports = gameOver
+module.exports = gameResult

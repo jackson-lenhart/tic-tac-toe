@@ -3,7 +3,7 @@
 let buildBoard = require('./modules/build-board')
 let renderBoard = require('./modules/render-board')
 let move = require('./modules/move')
-let gameOver = require('./modules/game-over')
+let gameResult = require('./modules/game-result')
 
 let { prompt, rlClose } = require('./utils/rl')
 let replicate = require('./utils/replicate')
@@ -35,7 +35,7 @@ async function start() {
           .map(x => parseInt(x, 10) - 1)
 
       board = move(board, i, j)
-      result = gameOver(board)
+      result = gameResult(board)
     }
 
     console.log(replicate('-', 66).join(''))
