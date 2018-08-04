@@ -57,7 +57,7 @@ async function start() {
       start() : rlClose()
   } catch (e) {
     rlClose()
-    console.error(e)
+    throw e
   }
 }
 
