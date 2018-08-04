@@ -11,11 +11,13 @@ let turn = board =>
   , 0)) % 2 === 1 ? 'X' : 'O'
 
 let move = (board, i, j) =>
-  moveTaken(board, i, j) ? board
-    : board.map((row, _i) =>
-      _i === i ?
-        row.map((x, _j) =>
-          _j === j ? turn(board) : x)
-        : row)
+  [i, j].some(x =>
+    x < 0 || x > 2 || isNaN(x)) ?
+    board : (moveTaken(board, i, j) ?
+      board : board.map((row, _i) =>
+        _i === i ?
+          row.map((x, _j) =>
+            _j === j ? turn(board) : x)
+          : row))
 
 module.exports = move
