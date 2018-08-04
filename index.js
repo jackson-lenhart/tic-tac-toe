@@ -56,6 +56,7 @@ async function start() {
     return playAgain === 'y' ?
       start() : rlClose()
   } catch (e) {
+    rlClose()
     console.error(e)
   }
 }
