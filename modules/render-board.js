@@ -8,6 +8,7 @@ let renderRow = (row, l, index) =>
 let renderBoard = board =>
   '  1   2   3\n' +
   board.reduce((acc, row, i) =>
-    acc + renderRow(row, row.length, i), '')
+    acc + renderRow(row, row.length, i)
+  , '')
 
 module.exports = renderBoard

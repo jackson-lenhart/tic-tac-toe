@@ -9,8 +9,7 @@ let rl = readline.createInterface({
 
 let prompt = q =>
   new Promise(resolve =>
-    rl.question(q, a => resolve(a))
-  )
+    rl.question(q, a => resolve(a)))
 
 let rlClose = () => rl.close()
 
